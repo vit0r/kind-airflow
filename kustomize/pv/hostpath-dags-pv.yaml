@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: dags-pv
+  labels:
+    type: dags-vol
+spec:
+  capacity:
+    storage: 1G
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  hostPath:
+    path: /opt/airflow/dags
+  claimRef:
+    name: dags-pvc
+    namespace: airflow

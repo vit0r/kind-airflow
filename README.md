@@ -9,10 +9,6 @@
 helm repo add apache-airflow https://airflow.apache.org/
 ```
 
-```console
-helm install my-airflow apache-airflow/airflow --version 1.2.0
-```
-
 ## Setup
 
 ```console

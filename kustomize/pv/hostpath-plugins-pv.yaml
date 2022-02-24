@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: plugins-pv
+  labels:
+    type: plugins-vol
+spec:
+  capacity:
+    storage: 1G
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: standard
+  hostPath:
+    path: /opt/airflow/plugins
+  claimRef:
+    name: plugins-pvc
+    namespace: airflow
