@@ -1,7 +1,7 @@
 # Pre Setup
 
 1. [KIND](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
-2. [kubectl](https://v1-18.docs.kubernetes.io/docs/tasks/tools/install-kubectl/)
+2. [kubectl](https://kubernetes.io/docs/tasks/tools/)
 3. [helm](https://helm.sh/docs/intro/install/)
 4. [apache-airflow](https://artifacthub.io/packages/helm/apache-airflow/airflow?modal=install)
 
@@ -12,7 +12,7 @@ helm repo add apache-airflow https://airflow.apache.org/
 ## Setup
 
 ```console
-kind create cluster --config kind-cluster.yaml --name cluster-test-${USERNAME}
+kind create cluster --config kind-cluster.yaml --name cluster-test-$USERNAME
 ```
 
 ```console
@@ -34,5 +34,5 @@ kubectl port-forward svc/apache-airflow-webserver 8080:8080 --namespace airflow
 ## Shutdown
 
 ```console
-kind delete cluster --name cluster-test-${USERNAME}
+kind delete cluster --name cluster-test-$USERNAME
 ```
